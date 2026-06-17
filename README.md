@@ -29,7 +29,7 @@ Two observations from the evaluation literature motivate chartcheck's design:
 2. *Omission and hallucination are distinct, and both are material.* In a 450-note
    evaluation, omissions occurred about twice as often as hallucinations (3.45% vs
    1.47% of sentences), while hallucinations were more often rated "major" (44% vs
-   16.7%) (*npj Digital Medicine* 2025, s41746-025-01670-7). A precision-only
+   16.7%) (Asgari et al., *npj Digital Medicine* 2025;8:274). A precision-only
    faithfulness score does not observe omission at all.
 
 chartcheck applies decomposition in both directions so that the two error classes
@@ -144,7 +144,7 @@ evaluator-evaluation and calibration steps.
 - PDSQI-9 — Croxford et al., *JAMIA* 2025 ([10.1093/jamia/ocaf068](https://doi.org/10.1093/jamia/ocaf068); [arXiv:2501.08977](https://arxiv.org/abs/2501.08977)).
 - PDSQI-9 as an LLM judge — Epic's [evaluation-instruments](https://github.com/epic-open-source/evaluation-instruments). chartcheck is complementary, adding the reference-grounded claim layer for the two record-dependent attributes.
 - FActScore — Min et al., EMNLP 2023 ([arXiv:2305.14251](https://arxiv.org/abs/2305.14251)).
-- Hallucination and omission rates in clinical summaries — *npj Digital Medicine* 2025 ([s41746-025-01670-7](https://www.nature.com/articles/s41746-025-01670-7)); Tang et al., *npj Digital Medicine* 2023 ([s41746-023-00896-7](https://www.nature.com/articles/s41746-023-00896-7)).
+- Hallucination and omission rates in clinical summaries — Asgari et al., *npj Digital Medicine* 2025;8:274 ([s41746-025-01670-7](https://www.nature.com/articles/s41746-025-01670-7)); Tang et al., *npj Digital Medicine* 2023 ([s41746-023-00896-7](https://www.nature.com/articles/s41746-023-00896-7)).
 - Error analysis for LLM evaluation — Husain, [*LLM Evals*](https://hamel.dev/blog/posts/evals-faq/).
 
 ## License
