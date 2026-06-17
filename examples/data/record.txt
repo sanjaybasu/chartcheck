@@ -1,0 +1,15 @@
+PATIENT: 58-year-old man.
+
+PROBLEM LIST: type 2 diabetes mellitus (uncontrolled); chronic kidney disease stage 3b; hypertension; major depressive disorder.
+
+ALLERGIES: Penicillin (anaphylaxis).
+
+MEDICATIONS: metformin 1000 mg twice daily; lisinopril 20 mg daily (started this visit); sertraline 50 mg daily.
+
+RESULTS: hemoglobin A1c 9.2% (elevated); eGFR 38 mL/min (low); potassium 5.3 mmol/L (high); blood pressure 158/94 mmHg.
+
+ASSESSMENT AND PLAN:
+Diabetes uncontrolled; increase metformin and refer to endocrinology.
+CKD stage 3b; avoid nephrotoxic agents and recheck eGFR in 4 weeks.
+Hyperkalemia; counsel on low-potassium diet and recheck potassium in 1 week.
+Depression; continue sertraline and follow up in 4 weeks.

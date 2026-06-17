@@ -105,6 +105,7 @@ class Task:
                 "active problems / diagnoses": [
                     "diagnos", "history of", "h/o", "hx", "disease", "disorder",
                     "failure", "cancer", "diabetes", "ckd", "copd", "chf", "depression",
+                    "hypertension", "htn", "kidney", "renal", "problem",
                 ],
                 "medications and dose changes": [
                     "mg", "mcg", "started", "stopped", "increased", "decreased",

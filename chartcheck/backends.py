@@ -42,7 +42,8 @@ _NEGATION_CUES = {
     "unremarkable", "never", "ruled", "r/o", "neg", "non",
 }
 _WORD = re.compile(r"[a-z0-9.%]+")
-_NUM = re.compile(r"\d+(?:\.\d+)?")
+# Standalone numbers only: do not pull "1" out of "A1c" or "3" out of "3b".
+_NUM = re.compile(r"(?<![A-Za-z])\d+(?:\.\d+)?(?![A-Za-z])")
 
 
 def split_sentences(text: str) -> List[str]:
@@ -130,7 +131,7 @@ class OfflineBackend(Backend):
 
     SUPPORT_T = 0.60   # overlap to count a claim as supported
     NEG_T = 0.30       # overlap above which a negation flip counts as a contradiction
-    COVER_T = 0.60     # overlap to count a fact as covered
+    COVER_T = 0.50     # overlap to count a fact as covered
 
     def decompose_claims(self, output: str, task: Task) -> List[str]:
         claims = []
@@ -159,11 +160,14 @@ class OfflineBackend(Backend):
                     category = "relevant to question"
             if category is None:
                 continue
-            key = " ".join(sorted(set(_content_tokens(sent))))
-            if key in seen:
+            # Strip a leading section label ("RESULTS:", "MEDICATIONS:") so it does
+            # not dilute the coverage overlap denominator.
+            fact_text = re.sub(r"^[A-Z][A-Z /]{1,20}:\s*", "", sent).strip()
+            key = " ".join(sorted(set(_content_tokens(fact_text))))
+            if not key or key in seen:
                 continue
             seen.add(key)
-            facts.append(FactVerdict(fact=sent, category=category,
+            facts.append(FactVerdict(fact=fact_text, category=category,
                                      coverage=Coverage.OMITTED, evidence="", confidence=0.0))
         return facts
 
